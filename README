@@ -1,6 +1,10 @@
-We want bower and npm for package management.
+# nomadlabs-frontend
 
-Following instructions are for Linux and MacOS users:
+We use bower and npm for package management.
+
+## Install npm/bower-toolchain
+
+This has to be executed only once. The following instructions are for Linux and MacOS users:
 
 1) [install nvm](https://github.com/creationix/nvm) (manage multiple versions of NodeJS/npm for package management)
 ```
@@ -15,8 +19,15 @@ nvm use iojs
 npm install -g bower
 ```
 
-3) 
+## Development
+
+1) Clean up and install dependencies
 ```
-npm install
-bower install
+npm prune && npm install
+bower prune && bower install
+```
+
+2) Start HTTP server
+```
+npm start
 ```
