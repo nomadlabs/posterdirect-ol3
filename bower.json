@@ -4,5 +4,8 @@
   "authors": [
     "Jennifer Gebske <jennifer@gebske.de>"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "angular-openlayers-directive": "~0.0.5"
+  }
 }
