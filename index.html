@@ -23,25 +23,39 @@
     <!-- angular-openlayers-directive -->
     <script src="bower_components/angular-openlayers-directive/dist/angular-openlayers-directive.js"></script>
 
-    <script>
-        var app = angular.module("demoapp", ['openlayers-directive']);
-    </script>
+    <!-- AngularJS code -->
+    <script src="index.js"></script>
+
   </head>
-  <body>
+  <body ng-controller="DemoController">
     <div class="container">
       <h1>Simple example</h1>
-      <p>Showing a simple map</p>
+      <p>Showing a table and a simple map</p>
 
       <div class="row">
-        <div class="col-md-6">
+
         <!-- table-->
-        <!-- /table-->
+        <div class="col-md-6">
+          <table class="table table-striped">   
+            <thead>
+              <tr>
+                <th>Standort</th>
+                <th>Beschreibung</th>
+                <th>Wochenpreis</th>
+                <th>Formate</th>
+                <th>Ort</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
         </div>
+
         <!-- map -->
         <div class="col-md-6">
-          <openlayers height="400px"></openlayers>
+          <openlayers ol-center="bern" height="400px"></openlayers>
         </div>
-        <!-- /map -->
+
       </div>
     </div>
 
