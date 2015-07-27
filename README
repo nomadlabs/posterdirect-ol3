@@ -31,3 +31,6 @@ bower prune && bower install
 ```
 npm start
 ```
+
+3) Open http://localhost:8080/index.html
+
