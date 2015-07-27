@@ -1,0 +1,11 @@
+{
+  "name": "nomadlabs-frontend",
+  "version": "1.0.0",
+  "description": "We want bower and npm for package management.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jennifer Gebske <jennifer@gebske.de>",
+  "license": "MIT"
+}
