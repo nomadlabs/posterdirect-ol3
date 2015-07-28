@@ -47,7 +47,7 @@
               </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="object in objects">
+                <tr ng-repeat="object in objects" ng-mouseover="state.objectIdHovered=object.id" ng-mouseleave="state.objectIdHovered=undefined">
                   <td>{{object.standort}}</td>
                   <td>{{object.beschreibung}}</td>
                   <td>{{object.wochenpreis}} CHF</td>
@@ -62,7 +62,7 @@
         <!-- map -->
         <div class="col-md-6">
           <openlayers ol-center="bern" height="400px">
-            <ol-marker ng-repeat="object in objects" name="object.beschreibung" lat="object.latitude" lon="object.longitude"></ol-marker>
+            <ol-marker ng-repeat="object in objects" name="object.beschreibung" lat="object.latitude" lon="object.longitude" ng-if="!state.objectIdHovered || state.objectIdHovered===object.id"></ol-marker>
           </openlayers>
         </div>
         <!-- /map -->

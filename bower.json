@@ -6,6 +6,6 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "angular-openlayers-directive": "~0.0.5"
+    "angular-openlayers-directive": "df4a8bf9a9"
   }
 }

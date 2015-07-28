@@ -9,6 +9,10 @@ app.controller('DemoController', [ '$scope', function($scope) {
         }
     });
 
+    $scope.state = {
+      objectIdHovered: undefined
+    };
+
     // dummy data
     $scope.objects = [
           {
