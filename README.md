@@ -16,6 +16,7 @@ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | 
 ```
 nvm install iojs
 nvm use iojs
+nvm alias default iojs
 npm install -g bower
 ```
 
