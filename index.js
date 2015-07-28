@@ -1,16 +1,17 @@
-var app = angular.module("demoapp", ['openlayers-directive']);
+var app = angular.module('demoapp', ['openlayers-directive']);
 
 app.controller('DemoController', [ '$scope', function($scope) {
     angular.extend($scope, {
         bern: {
             lat: 46.94,
             lon: 7.44,
-            zoom: 5
+            zoom: 7
         }
     });
 
     $scope.state = {
-      objectIdHovered: undefined
+      rowObjectIdHovered: undefined,
+      mapObjectIdHovered: undefined
     };
 
     // dummy data
@@ -22,8 +23,8 @@ app.controller('DemoController', [ '$scope', function($scope) {
             "wochenpreis": "48",
             "format": "F4M",
             "ort": "Zug-Herti",
-            "latitude": 47.17717693671103,
-            "longitude": 8.506978072183173
+            "lat": 47.17717693671103,
+            "lon": 8.506978072183173
         },
         {
             "id": "2",
@@ -32,8 +33,8 @@ app.controller('DemoController', [ '$scope', function($scope) {
             "wochenpreis": "240",
             "format": "F12",
             "ort": "Unterägeri",
-            "latitude": 47.1410163,
-            "longitude": 8.573110799999995
+            "lat": 47.1410163,
+            "lon": 8.573110799999995
         },
         {
             "id": "3",
@@ -42,8 +43,8 @@ app.controller('DemoController', [ '$scope', function($scope) {
             "wochenpreis": "162",
             "format": "F12",
             "ort": "Genève-Champel",
-            "latitude": 46.1927354,
-            "longitude": 6.162045300000045
+            "lat": 46.1927354,
+            "lon": 6.162045300000045
         },
         {
             "id": "4",
@@ -52,7 +53,20 @@ app.controller('DemoController', [ '$scope', function($scope) {
             "wochenpreis": "385",
             "format": "F12L",
             "ort": "Nyon",
-            "latitude": 46.3878733,
-            "longitude": 6.220048799999972
+            "lat": 46.3878733,
+            "lon": 6.220048799999972
         }];
+
+        // workaround for the angular-openlayers-driective
+        // https://github.com/tombatossals/angular-openlayers-directive/issues/76#issuecomment-120605824
+        angular.forEach($scope.objects, function(object) {
+          object.label = {
+            message: ' ',
+            show: false,
+            showOnMouseClick: false
+          };
+          object.onClick = function(event, properties) {
+            $scope.state.mapObjectIdHovered = properties.id;
+          };
+        });
 }]);
